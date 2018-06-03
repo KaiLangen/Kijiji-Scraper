@@ -98,9 +98,8 @@ def MailAd(ad_dict, email_title):  # Sends an email with a link and info of new 
     
     # Fill in the variables below with your info
     #------------------------------------------
-    sender = 'sender@example.com'
-    passwd = 'Sender Password'
-    receiver = 'receiver@example.com'
+    sender = 'kijiji.adserver1234@gmail.com'
+    receiver = 'kijiji.adserver1234@gmail.com'
     smtp_server = 'smtp.gmail.com'
     smtp_port = 465
     #------------------------------------------
@@ -168,7 +167,9 @@ def scrape(url, old_ad_dict, exclude_list, filename):  # Pulls page data from a 
         soup = BeautifulSoup(page.content, "html.parser")
         
         if not email_title: # If the email title doesnt exist pull it form the html data
-            email_title = soup.find('div', {'class': 'message'}).find('strong').text.strip('"')
+            #email_title = soup.find('div', {'class': 'message'}).find('strong').text.strip('"')
+            email_title = soup.title.string
+            email_title = email_title.split('|')[0]
             email_title = toUpper(email_title)
             
         kijiji_ads = soup.find_all("div", {"class": "regular-ad"})  # Finds all ad trees in page html.
@@ -242,3 +243,4 @@ def main(): # Main function, handles command line arguments and calls other func
 
 if __name__ == "__main__":
     main()
+
