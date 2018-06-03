@@ -11,7 +11,6 @@ import os
 
 def ParseAd(html):  # Parses ad html trees and sorts relevant data into a dictionary
     ad_info = {}
-    
     #description = html.find('div', {"class": "description"}).text.strip()
     #description = description.replace(html.find('div', {"class": "details"}).text.strip(), '')
     #print(description)
@@ -99,6 +98,7 @@ def MailAd(ad_dict, email_title):  # Sends an email with a link and info of new 
     # Fill in the variables below with your info
     #------------------------------------------
     sender = 'kijiji.adserver1234@gmail.com'
+    passwd = 'sirchickendigby'
     receiver = 'kijiji.adserver1234@gmail.com'
     smtp_server = 'smtp.gmail.com'
     smtp_port = 465
