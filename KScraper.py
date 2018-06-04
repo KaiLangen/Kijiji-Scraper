@@ -11,7 +11,6 @@ import os
 
 def ParseAd(html):  # Parses ad html trees and sorts relevant data into a dictionary
     ad_info = {}
-    
     #description = html.find('div', {"class": "description"}).text.strip()
     #description = description.replace(html.find('div', {"class": "details"}).text.strip(), '')
     #print(description)
