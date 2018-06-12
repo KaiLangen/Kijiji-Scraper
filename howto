@@ -28,13 +28,13 @@ cp .procmailrc ~
 
 
 # make directories for procmail and fetchmail logs
-mkdir ~/fetchmail
-touch ~/fetchmail/fetchmail.log
-mkdir ~/procmail
-touch ~/procmail/procmail.log
+mkdir ~/.fetchmail
+touch ~/.fetchmail/fetchmail.log
+mkdir ~/.procmail
+touch ~/.procmail/procmail.log
 
 # start fetchmail daemon
 fetchmail -v --daemon 30
 
 #start up server
-python3 server
+python3 server.py
